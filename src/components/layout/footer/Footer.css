@@ -1,0 +1,30 @@
+.containerLinksFooter {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 1000%;
+  margin: 0 auto;
+}
+.linksFooter {
+  color: white;
+  text-decoration: none;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  mix-blend-mode: normal;
+}
+
+.textFooter {
+  width: 50%;
+  color: white;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  padding-bottom: 25px;
+}

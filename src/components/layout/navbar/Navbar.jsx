@@ -40,6 +40,8 @@ const Navbar = () => {
               justifyContent: "center",
               width: "100%",
               alignItems: "center",
+              marginLeft: "5%",
+              marginRight: "5%",
             }}
           >
             <img
