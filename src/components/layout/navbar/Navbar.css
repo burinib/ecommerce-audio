@@ -1,0 +1,15 @@
+.containerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 1000%;
+  margin: 0 auto;
+}
+.links {
+  color: inherit;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 2px;
+  font-family: "Manrope";
+}
