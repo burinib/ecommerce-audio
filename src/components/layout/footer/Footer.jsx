@@ -14,8 +14,8 @@ const Footer = () => {
         marginRight: "5%",
       }}
     >
-      <Box sx={{ display: "flex", paddingTop: "15px" }}>
-        <Box>
+      <Box sx={{ display: "flex" }}>
+        <Box sx={{ paddingTop: "15px" }}>
           <img
             src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
             alt=""
@@ -36,10 +36,10 @@ const Footer = () => {
             className="textFooter"
             sx={{ fontSize: "15px", color: "white" }}
           >
-            Audiophile is an all in one stop to fulfill your audio needs. We're
-            a small team of music lovers and sound specialists who are devoted
-            to helping you get the most out of personal audio. Come and visit
-            our demo facility - we’re open 7 days a week.
+            Audiophile is an all in one stop to fulfill your audio needs. Were a
+            small team of music lovers and sound specialists who are devoted to
+            helping you get the most out of personal audio. Come and visit our
+            demo facility - we’re open 7 days a week.
           </Typography>
         </Box>
         <Box>

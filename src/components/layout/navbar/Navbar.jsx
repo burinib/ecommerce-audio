@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 import "./Navbar.css";
+import { menu } from "../../../routes/navigation";
 
 const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, backgroundColor: "#0E0E0E" }}>
       <AppBar position="static">
         <Toolbar
           sx={{
@@ -48,12 +49,21 @@ const Navbar = () => {
               src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
               alt=""
             />
-            <div className="containerLinks">
+            <Box className="containerLinks">
+              {menu.map((item) => {
+                return (
+                  <Link key={item.id} sx={{ flexGrow: 1 }} to={item.path}>
+                    {item.title}
+                  </Link>
+                );
+              })}
+            </Box>
+            {/*     <div className="containerLinks">
               <Link className="links">HOME</Link>
               <Link className="links">HEADPHONES</Link>
               <Link className="links">SPEAKERS</Link>
               <Link className="links">EARPHONES</Link>
-            </div>
+            </div> */}
             <Box sx={{ marginLeft: "auto" }}>
               <ShoppingCartIcon className="carritoIcon" />
             </Box>

@@ -1,9 +1,8 @@
 .containerLinksFooter {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  width: 1000%;
-  margin: 0 auto;
+  justify-content: end;
+  width: 100%;
+  padding-top: 25px;
 }
 .linksFooter {
   color: white;
@@ -14,6 +13,7 @@
   font-size: 15px;
   line-height: 25px;
   mix-blend-mode: normal;
+  padding-left: 15px;
 }
 
 .textFooter {
@@ -27,4 +27,5 @@
   mix-blend-mode: normal;
   opacity: 0.5;
   padding-bottom: 25px;
+  opacity: 0.5;
 }
