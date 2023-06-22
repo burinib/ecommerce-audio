@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import ProductsList from "./ProductsList";
+
 import { useParams } from "react-router-dom";
 import { getAllProducts } from "../../../services/productsServices";
 
 const ProductsListContainer = () => {
   const [products, setProducts] = useState([]);
   const { categoryName } = useParams();
+  console.log(products);
 
   useEffect(() => {
     const getData = async () => {
@@ -15,14 +17,11 @@ const ProductsListContainer = () => {
       );
       setProducts(productsByCategory);
     };
+
     getData();
   }, [categoryName]);
 
-  return (
-    <div>
-      <ProductsList products={products} />
-    </div>
-  );
+  return <ProductsList products={products} />;
 };
 
 export default ProductsListContainer;
