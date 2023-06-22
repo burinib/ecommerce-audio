@@ -11,6 +11,7 @@ const Navbar = () => {
     <Box sx={{ flexGrow: 1, backgroundColor: "#0E0E0E" }}>
       <AppBar position="static">
         <Toolbar
+          className="toolbarContainer"
           sx={{
             backgroundColor: "#0E0E0E",
             width: "100%",
@@ -36,6 +37,7 @@ const Navbar = () => {
           </Box>
 
           <Box
+            className="boxContainer"
             sx={{
               display: { xs: "none", md: "flex", backgroundColor: "#0E0E0E" },
               justifyContent: "center",
@@ -52,7 +54,12 @@ const Navbar = () => {
             <Box className="containerLinks">
               {menu.map((item) => {
                 return (
-                  <Link key={item.id} sx={{ flexGrow: 1 }} to={item.path}>
+                  <Link
+                    className="Links"
+                    key={item.id}
+                    sx={{ flexGrow: 1 }}
+                    to={item.path}
+                  >
                     {item.title}
                   </Link>
                 );

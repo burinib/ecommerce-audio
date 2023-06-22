@@ -11,7 +11,7 @@ const Layout = () => {
       <div
         style={{
           minHeight: "calc(100vh - 60px - 200px)",
-          backgroundColor: "blue",
+          backgroundColor: "#0E0E0E",
         }}
       >
         <Outlet />
