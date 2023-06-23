@@ -10,8 +10,9 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        marginLeft: "5%",
-        marginRight: "5%",
+        backgroundColor: "black",
+        height: "200px",
+        width: "100%",
       }}
     >
       <Box sx={{ display: "flex" }}>

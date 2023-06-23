@@ -2,6 +2,8 @@ import HomeContainer from "../components/pages/home/HomeContainer";
 import LoginContainer from "../components/pages/login/LoginContainer";
 import ProductsListContainer from "../components/pages/productsList/ProductstListContainer";
 import ProductDetailContainer from "../components/pages/productDetail/ProductDetailContainer";
+import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
+import RegisterContainer from "../components/pages/register/RegisterContainer";
 
 export const menuRoutes = [
   {
@@ -24,5 +26,16 @@ export const menuRoutes = [
     id: "login",
     path: "/login",
     Element: LoginContainer,
+  },
+
+  {
+    id: "checkout",
+    path: "/checkout",
+    Element: CheckoutContainer,
+  },
+  {
+    id: "register",
+    path: "/register",
+    Element: RegisterContainer,
   },
 ];

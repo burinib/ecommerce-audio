@@ -2,11 +2,13 @@ import { AppBar, Box, IconButton, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 import "./Navbar.css";
 import { menu } from "../../../routes/navigation";
+import CustomModalContainer from "../../common/customModal/customModalContainer";
 
-const Navbar = () => {
+const Navbar = ({ handleOpen, handleClose, open }) => {
   return (
     <Box sx={{ flexGrow: 1, backgroundColor: "#0E0E0E" }}>
       <AppBar position="static">
@@ -39,12 +41,13 @@ const Navbar = () => {
           <Box
             className="boxContainer"
             sx={{
-              display: { xs: "none", md: "flex", backgroundColor: "#0E0E0E" },
+              display: { xs: "none", md: "flex" },
               justifyContent: "center",
               width: "100%",
               alignItems: "center",
               marginLeft: "5%",
               marginRight: "5%",
+              height: "8vh",
             }}
           >
             <img
@@ -65,15 +68,26 @@ const Navbar = () => {
                 );
               })}
             </Box>
-            {/*     <div className="containerLinks">
-              <Link className="links">HOME</Link>
-              <Link className="links">HEADPHONES</Link>
-              <Link className="links">SPEAKERS</Link>
-              <Link className="links">EARPHONES</Link>
-            </div> */}
-            <Box sx={{ marginLeft: "auto" }}>
-              <ShoppingCartIcon className="carritoIcon" />
+            <Box className="usersContainer">
+              <Box className="loginBox">
+                <Link to="/register" className="linkSign">
+                  {" "}
+                  Register{" "}
+                </Link>
+                <hr />
+                <Link to="/login" className="linkSign">
+                  Login
+                </Link>
+              </Box>
+              <IconButton onClick={handleOpen}>
+                <ShoppingCartOutlinedIcon
+                  sx={{ fontSize: "1.5rem", color: "white" }}
+                />
+              </IconButton>
             </Box>
+            {/* aca el modal
+             */}
+            <CustomModalContainer open={open} handleClose={handleClose} />
           </Box>
         </Toolbar>
       </AppBar>

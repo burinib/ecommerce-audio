@@ -19,3 +19,32 @@
   border-bottom: solid 1px rgba(248, 248, 248, 0.281);
   padding-bottom: 10px;
 }
+
+.cartIcon {
+  color: white;
+}
+
+.usersContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.usersContainer .loginBox {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.usersContainer .loginBox .linkSign {
+  margin: 0 !important;
+  text-decoration: none;
+  color: white;
+}
+
+.usersContainer .loginBox .linkSign:hover {
+  color: #fbaf85;
+}

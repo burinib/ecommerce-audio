@@ -1,10 +1,11 @@
+import { Box } from "@mui/material";
 import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
-      <h1 className="pruebaColor">todo funciona</h1>
-    </div>
+    <Box>
+      <div className="box-container"></div>
+    </Box>
   );
 };
 
