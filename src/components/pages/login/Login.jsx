@@ -1,5 +1,9 @@
 const Login = () => {
-  return <div>este es el login</div>;
+  return (
+    <div style={{ backgroundColor: "red", height: "50vh" }}>
+      este es el login
+    </div>
+  );
 };
 
 export default Login;
