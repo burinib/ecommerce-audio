@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { menu } from "../../../routes/navigation";
 
 import "./Footer.css";
 
@@ -10,7 +11,7 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "black",
+        backgroundColor: "rgb(25, 25, 25)",
         height: "200px",
         width: "100%",
       }}
@@ -23,11 +24,19 @@ const Footer = () => {
           />
         </Box>
         <Box className="containerLinksFooter">
-          <Box>
-            <Link className="linksFooter">HOME</Link>
-            <Link className="linksFooter">HEADPHONES</Link>
-            <Link className="linksFooter">SPEAKERS</Link>
-            <Link className="linksFooter">EARPHONES</Link>
+          <Box className="containerLinks">
+            {menu.map((item) => {
+              return (
+                <Link
+                  className="Links"
+                  key={item.id}
+                  sx={{ flexGrow: 1 }}
+                  to={item.path}
+                >
+                  {item.title}
+                </Link>
+              );
+            })}
           </Box>
         </Box>
       </Box>
@@ -44,7 +53,7 @@ const Footer = () => {
           </Typography>
         </Box>
         <Box>
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", gap: "15px" }}>
             <SvgIcon component={FacebookIcon} sx={{ color: "white" }} />
             <SvgIcon component={TwitterIcon} sx={{ color: "white" }} />
             <SvgIcon component={InstagramIcon} sx={{ color: "white" }} />

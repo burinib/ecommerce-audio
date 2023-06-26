@@ -15,7 +15,7 @@ const Navbar = ({ handleOpen, handleClose, open }) => {
         <Toolbar
           className="toolbarContainer"
           sx={{
-            backgroundColor: "#0E0E0E",
+            backgroundColor: "rgb(25, 25, 25)",
             width: "100%",
           }}
         >
