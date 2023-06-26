@@ -2,9 +2,9 @@ import { useState } from "react";
 import Login from "./Login";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
 const LoginContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
+
   const handleShow = () => {
     setShowPassword(!showPassword);
   };
@@ -14,32 +14,31 @@ const LoginContainer = () => {
       email: "",
       password: "",
     },
-
     onSubmit: (data) => {
-      console.log("Se envio", data);
-      //conexion con firebase
+      console.log("se envio el formulario", data);
+      // ACA LLAMARIA A FIREBASE
     },
     validateOnChange: false,
     validationSchema: Yup.object({
-      email: Yup.string("deben ser caracteres")
-        .email("no corresponde a un mail valido")
+      email: Yup.string("Deben ser caracteres")
+        .email("No corresponde con un email valido")
         .required("Este campo es obligatorio"),
-      password: Yup.string("deben ser caracteres").required(
+      password: Yup.string("Deben ser caracteres").required(
         "Este campo es obligatorio"
       ),
     }),
   });
 
+  console.log(errors);
+
   return (
-    <div>
-      <Login
-        showPassword={showPassword}
-        handleShow={handleShow}
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
-        errors={errors}
-      />
-    </div>
+    <Login
+      showPassword={showPassword}
+      handleShow={handleShow}
+      handleSubmit={handleSubmit}
+      handleChange={handleChange}
+      errors={errors}
+    />
   );
 };
 
