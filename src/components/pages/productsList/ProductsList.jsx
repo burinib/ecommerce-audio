@@ -9,7 +9,7 @@ const ProductsList = ({ products, categoryName }) => {
         sx={{
           width: "100%",
           height: "60px",
-          backgroundColor: "GrayText",
+          backgroundColor: "rgb(25, 25, 25)",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
