@@ -4,7 +4,7 @@ import "./ProducstList.css";
 
 const ProductsList = ({ products, categoryName }) => {
   return (
-    <div>
+    <Box sx={{ height: "72vh" }}>
       <Box
         sx={{
           width: "100%",
@@ -47,7 +47,7 @@ const ProductsList = ({ products, categoryName }) => {
           </div>
         );
       })}
-    </div>
+    </Box>
   );
 };
 
