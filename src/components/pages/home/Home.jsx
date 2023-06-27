@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import "./Home.css";
 import { BotonNaranja } from "../../common/custom/customComponent";
+import CardBringingContainer from "../../common/cardBringing/CardBringingContainer";
 
 const Home = () => {
   return (
@@ -40,6 +41,7 @@ const Home = () => {
           <BotonNaranja variant="contained">See Product</BotonNaranja>
         </Box>
       </Box>
+      <CardBringingContainer />
     </Box>
   );
 };
