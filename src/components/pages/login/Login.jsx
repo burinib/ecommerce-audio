@@ -46,8 +46,8 @@ const Login = ({
                 error={errors.password ? true : false}
                 name="password"
                 onChange={handleChange}
-                endAdornment={
-                  <InputAdornment>
+                endAdornment={[
+                  <InputAdornment position="end" key="password-adornment">
                     <IconButton
                       aria-label="toggle password visibility"
                       onClick={handleShow}
@@ -59,10 +59,11 @@ const Login = ({
                         <Visibility color="primary" />
                       )}
                     </IconButton>
-                  </InputAdornment>
-                }
+                  </InputAdornment>,
+                ]}
                 label="Password"
               />
+
               <FormHelperText error={errors.password ? true : false}>
                 {errors.password}
               </FormHelperText>

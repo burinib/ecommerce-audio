@@ -1,6 +1,5 @@
 import {
   TextField,
-  Button,
   FormControl,
   InputLabel,
   OutlinedInput,
@@ -11,6 +10,8 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import "./Register.css";
+import "../../common/custom/customComponent.js";
+import { BotonNaranja } from "../../common/custom/customComponent.js";
 
 const Register = ({
   showPassword,
@@ -67,7 +68,7 @@ const Register = ({
           </div>
 
           <div className="form-group">
-            <FormControl sx={{ m: 1, width: "100%" }} variant="outlined">
+            <FormControl sx={{ width: "100%" }} variant="outlined">
               <InputLabel htmlFor="outlined-adornment-password">
                 Password
               </InputLabel>
@@ -113,9 +114,15 @@ const Register = ({
           </div>
 
           <div className="form-group">
-            <Button type="submit" variant="contained">
-              Register
-            </Button>
+            <div style={{ margin: "0 auto" }}>
+              <BotonNaranja
+                sx={{ alignItems: "center" }}
+                type="submit"
+                variant="contained"
+              >
+                Register
+              </BotonNaranja>
+            </div>
           </div>
         </form>
       </div>
