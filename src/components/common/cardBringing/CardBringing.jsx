@@ -1,5 +1,4 @@
 import { Card, CardContent, Typography } from "@mui/material";
-import { orange } from "@mui/material/colors";
 import imgBringing from "../../../assets/shared/desktop/image-best-gear.jpg";
 
 const CardBringing = () => {
@@ -8,7 +7,7 @@ const CardBringing = () => {
       sx={{
         display: "flex",
         alignItems: "center",
-        width: "80%",
+        width: "65%",
         justifyContent: "space-around",
         margin: "40px auto",
         boxShadow: "none",
@@ -16,7 +15,7 @@ const CardBringing = () => {
     >
       <CardContent
         sx={{
-          p: "50px",
+          p: "100px",
           height: "100%",
         }}
       >
@@ -26,12 +25,12 @@ const CardBringing = () => {
             fontSize: "40px",
             fontWeight: "bold",
             lineHeight: "44px",
-            letterSpacing: "1.429px",
+            letterSpacing: "1.100px",
             textTransform: "uppercase",
-            pb: 10,
+            pb: 3,
           }}
         >
-          Bringing you the <span style={{ color: orange }}>best</span> audio
+          Bringing you the <span style={{ color: "orange" }}>best</span> audio
           gear
         </Typography>
         <Typography
@@ -39,8 +38,7 @@ const CardBringing = () => {
             color: "#000",
             fontSize: "15px",
             fontWeight: 500,
-            lineHeight: "25px",
-            opacity: 0.5,
+            opacity: 0.6,
           }}
         >
           Located at the heart of New York City, Audiophile is the premier store
