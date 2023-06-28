@@ -1,0 +1,33 @@
+.parlante-orange-container {
+  display: flex;
+  justify-content: center;
+  background-color: #d87d4a;
+  width: 100%;
+}
+
+.content-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.sectionImg {
+  flex-basis: 50%;
+}
+
+.card-image {
+  width: 410px;
+  height: 493px;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #d87d4a;
+}
+
+.button {
+  width: fit-content;
+  color: white;
+  background-color: black !important;
+}
