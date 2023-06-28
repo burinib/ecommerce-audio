@@ -2,12 +2,15 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProductById } from "../../../services/productsServices";
 import ProductDetail from "./ProductDetail";
+import { addToCart } from "../../../store/cartSlice";
+import { useDispatch } from "react-redux";
 
 const ProductDetailContainer = () => {
   const { id } = useParams();
 
   const [product, setproduct] = useState({});
-  console.log(product);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const getData = async () => {
       let data = await getProductById(id);
@@ -23,8 +26,7 @@ const ProductDetailContainer = () => {
       ...product,
       quantity: cantidad,
     };
-
-    console.log("agregue al carrito", data);
+    dispatch(addToCart(data));
   };
 
   return <ProductDetail product={product} onAdd={onAdd} />;
