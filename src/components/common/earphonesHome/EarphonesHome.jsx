@@ -2,13 +2,23 @@ import { Box, Typography } from "@mui/material";
 import { BotonNaranja } from "../custom/customComponent";
 import imgAuriHome from "../../../assets/home/desktop/image-earphones-yx1.jpg";
 import "./EarphonesHome.css";
+import { Link } from "react-router-dom";
 
 const EarphonesHome = () => {
   return (
     <div>
       <Box sx={{ display: "flex", width: "100%", paddingTop: "10px" }}>
-        <Box sx={{ width: "50%", flexBasis: "50%", marginRight: "10px" }}>
-          <img src={imgAuriHome} style={{ width: "100%" }} />
+        <Box
+          sx={{
+            width: "50%",
+            flexBasis: "50%",
+            marginRight: "20px",
+          }}
+        >
+          <img
+            src={imgAuriHome}
+            style={{ width: "100%", borderRadius: "8px" }}
+          />
         </Box>
         <Box
           sx={{
@@ -19,6 +29,7 @@ const EarphonesHome = () => {
             alignItems: "center",
             width: "50%",
             flexBasis: "50%",
+            borderRadius: "8px",
           }}
         >
           <Typography
@@ -30,16 +41,18 @@ const EarphonesHome = () => {
           >
             YX1 EARPHONES
           </Typography>
-          <BotonNaranja
-            sx={{
-              border: "1px black solid",
-              color: "black",
-              borderRadius: "0px",
-              fontWeight: "bold",
-            }}
-          >
-            See Product
-          </BotonNaranja>
+          <Link to="/category/earphones">
+            <BotonNaranja
+              sx={{
+                border: "1px black solid",
+                color: "black",
+                borderRadius: "0px",
+                fontWeight: "bold",
+              }}
+            >
+              See Product
+            </BotonNaranja>
+          </Link>
         </Box>
       </Box>
     </div>

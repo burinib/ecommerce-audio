@@ -3,6 +3,7 @@
   justify-content: center;
   background-color: #d87d4a;
   width: 100%;
+  border-radius: 8px;
 }
 
 .content-wrapper {

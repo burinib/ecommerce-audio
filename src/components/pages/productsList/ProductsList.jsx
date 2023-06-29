@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./ProducstList.css";
 import CardBringingContainer from "../../common/cardBringing/CardBringingContainer";
+import CardTripleContainer from "../../common/cardTriple/CardTripleContainer";
 
 const ProductsList = ({ products, categoryName }) => {
   return (
@@ -47,6 +48,7 @@ const ProductsList = ({ products, categoryName }) => {
           </div>
         );
       })}
+      <CardTripleContainer />
       <CardBringingContainer />
     </Box>
   );

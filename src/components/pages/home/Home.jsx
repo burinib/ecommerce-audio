@@ -6,6 +6,7 @@ import CardTripleContainer from "../../common/cardTriple/CardTripleContainer";
 import ParlanteOrangeContainer from "../../common/ParlanteOrange/ParlanteOrangeContainer";
 import GrisHomeContainer from "../../common/grisHome/GrisHomeContainer";
 import EarphonesHomeContainer from "../../common/earphonesHome/EarphonesHomeContainer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -42,7 +43,9 @@ const Home = () => {
           for the passionate music enthusiast.
         </Typography>
         <Box sx={{ marginTop: "auto", alignSelf: "flex-start" }}>
-          <BotonNaranja variant="contained">See Product</BotonNaranja>
+          <Link to="/category/headphones">
+            <BotonNaranja variant="contained">See Product</BotonNaranja>
+          </Link>
         </Box>
       </Box>
       <Box sx={{ width: "80%", marginLeft: "10%" }}>

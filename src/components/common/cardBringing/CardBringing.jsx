@@ -50,7 +50,7 @@ const CardBringing = () => {
       <img
         src={imgBringing}
         alt=""
-        style={{ width: "540px", height: "590px" }}
+        style={{ width: "540px", height: "590px", borderRadius: "8px" }}
       />
     </Card>
   );

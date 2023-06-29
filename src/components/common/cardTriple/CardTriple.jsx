@@ -1,7 +1,7 @@
 import { Button, Card, CardContent, Typography } from "@mui/material";
-import img1 from "../../../assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg";
-import img2 from "../../../assets/product-zx9-speaker/desktop/image-category-page-preview.jpg";
-import img3 from "../../../assets/product-yx1-earphones/desktop/image-category-page-preview.jpg";
+import img1 from "../../../assets/shared/desktop/image-category-thumbnail-headphones.png";
+import img2 from "../../../assets/shared/desktop/image-category-thumbnail-speakers.png";
+import img3 from "../../../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import { Link } from "react-router-dom";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import "./CardTriple.css";

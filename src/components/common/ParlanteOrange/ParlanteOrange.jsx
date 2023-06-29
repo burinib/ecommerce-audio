@@ -2,6 +2,7 @@ import { Box, CardContent, Typography } from "@mui/material";
 import { BotonNaranja } from "../custom/customComponent";
 import imgSpeaker from "../../../assets/product-zx9-speaker/desktop/image-removebg-preview(38).png";
 import "./ParlanteOrange.css";
+import { Link } from "react-router-dom";
 
 const ParlanteOrange = () => {
   return (
@@ -19,9 +20,11 @@ const ParlanteOrange = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </Typography>
-            <BotonNaranja className="button" variant="contained">
-              SET PRODUCT
-            </BotonNaranja>
+            <Link to="/category/speakers">
+              <BotonNaranja className="button" variant="contained">
+                SET PRODUCT
+              </BotonNaranja>
+            </Link>
           </Box>
         </Box>
       </CardContent>
