@@ -1,0 +1,25 @@
+.gris-home-container {
+  position: relative;
+  width: 100%;
+  padding-top: 10px;
+  /* Agrega aquí otros estilos necesarios para el contenedor */
+}
+
+.gris-home-image {
+  width: 100%;
+  height: 320px;
+}
+
+.gris-home-content {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.gris-home-title {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 38px !important;
+}

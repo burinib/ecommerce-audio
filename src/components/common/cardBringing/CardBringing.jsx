@@ -7,8 +7,6 @@ const CardBringing = () => {
       sx={{
         display: "flex",
         alignItems: "center",
-        width: "65%",
-        justifyContent: "space-around",
         margin: "40px auto",
         boxShadow: "none",
       }}

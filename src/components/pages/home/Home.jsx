@@ -4,6 +4,8 @@ import { BotonNaranja } from "../../common/custom/customComponent";
 import CardBringingContainer from "../../common/cardBringing/CardBringingContainer";
 import CardTripleContainer from "../../common/cardTriple/CardTripleContainer";
 import ParlanteOrangeContainer from "../../common/ParlanteOrange/ParlanteOrangeContainer";
+import GrisHomeContainer from "../../common/grisHome/GrisHomeContainer";
+import EarphonesHomeContainer from "../../common/earphonesHome/EarphonesHomeContainer";
 
 const Home = () => {
   return (
@@ -43,9 +45,13 @@ const Home = () => {
           <BotonNaranja variant="contained">See Product</BotonNaranja>
         </Box>
       </Box>
-      <ParlanteOrangeContainer />
-      <CardTripleContainer />
-      <CardBringingContainer />
+      <Box sx={{ width: "80%", marginLeft: "10%" }}>
+        <CardTripleContainer />
+        <ParlanteOrangeContainer />
+        <GrisHomeContainer />
+        <EarphonesHomeContainer />
+        <CardBringingContainer />
+      </Box>
     </Box>
   );
 };
