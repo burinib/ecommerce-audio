@@ -1,12 +1,25 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CustomModal from "./CustomModal";
+import { useEffect } from "react";
+import { getTotalPrice } from "../../../store/cartSlice";
 
 const CustomModalContainer = ({ open, handleClose }) => {
-  const { cart } = useSelector((store) => store.cartSlice);
+  const { cart, total } = useSelector((store) => store.cartSlice);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTotalPrice());
+  }, [cart, dispatch]);
 
   return (
     <div>
-      <CustomModal open={open} handleClose={handleClose} cart={cart} />
+      <CustomModal
+        open={open}
+        handleClose={handleClose}
+        cart={cart}
+        dispatch={dispatch}
+        total={total}
+      />
     </div>
   );
 };

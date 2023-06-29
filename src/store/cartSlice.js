@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  cart: [],
+  cart: JSON.parse(localStorage.getItem("cart")) || [],
+  total: 0,
 };
 
 export const cartSlice = createSlice({
@@ -25,14 +26,38 @@ export const cartSlice = createSlice({
         });
 
         state.cart = newArr;
+        localStorage.setItem("carrito", JSON.stringify(newArr));
       } else {
+        localStorage.setItem(
+          "carrito",
+          JSON.stringify([...state.cart, action.payload])
+        );
         state.cart = [...state.cart, action.payload];
       }
+
+      //Guarda en el storage lo que tengo el carrito en este punto
+    },
+    clearCart: (state) => {
+      state.cart = [];
+    },
+    removeById: (state, action) => {
+      let newArray = state.cart.filter(
+        (product) => product.id !== action.payload
+      );
+      state.cart = newArray;
+      localStorage.setItem("carrito", JSON.stringify(newArray));
+    },
+    getTotalPrice: (state) => {
+      const total = state.cart.reduce((acc, elemento) => {
+        return acc + elemento.quantity * elemento.price;
+      }, 0);
+
+      state.total = total;
     },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, clearCart, removeById, getTotalPrice } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
