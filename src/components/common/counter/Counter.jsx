@@ -3,7 +3,12 @@ import { Button } from "@mui/material";
 const Counter = ({ counter, setCounter, onAdd }) => {
   return (
     <div>
-      <button onClick={() => setCounter(counter - 1)}>-</button>
+      <button
+        onClick={() => setCounter(counter - 1)}
+        disabled={counter > 1 ? false : true}
+      >
+        -
+      </button>
       <h5>{counter}</h5>
       <button onClick={() => setCounter(counter + 1)}>+</button>
       <Button

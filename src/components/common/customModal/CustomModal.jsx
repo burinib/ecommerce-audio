@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BotonNaranja } from "../custom/customComponent";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { clearCart, removeById } from "../../../store/cartSlice";
+import CartCounter from "../cartCounter/CartCounter";
 
 let stiloModal = {
   position: "absolute",
@@ -37,9 +38,9 @@ const CustomModal = ({ open, handleClose, cart, dispatch, total }) => {
               <div>
                 {/* <img src={prod.image} alt="" /> */}
                 <h4>{prod.name}</h4>
-                <h6>{prod.price}</h6>
+                <h5>{prod.price}</h5>
               </div>
-              {/* counter */}
+              <CartCounter id={prod.id} quantity={prod.quantity} />
             </div>
           ))}
           <Link to={"/checkout"}>

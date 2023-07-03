@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Toolbar } from "@mui/material";
+import { AppBar, Badge, Box, IconButton, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -8,7 +8,7 @@ import "./Navbar.css";
 import { menu } from "../../../routes/navigation";
 import CustomModalContainer from "../../common/customModal/customModalContainer";
 
-const Navbar = ({ handleOpen, handleClose, open }) => {
+const Navbar = ({ handleOpen, handleClose, open, cart }) => {
   return (
     <Box sx={{ flexGrow: 1, backgroundColor: "#0E0E0E" }}>
       <AppBar position="static">
@@ -79,14 +79,16 @@ const Navbar = ({ handleOpen, handleClose, open }) => {
                   Login
                 </Link>
               </Box>
-              <IconButton onClick={handleOpen}>
-                <ShoppingCartOutlinedIcon
-                  sx={{ fontSize: "1.5rem", color: "white" }}
-                />
-              </IconButton>
+
+              <Badge badgeContent={cart.lenght} color="primary">
+                <IconButton onClick={handleOpen}>
+                  <ShoppingCartOutlinedIcon
+                    sx={{ fontSize: "1.5rem", color: "white" }}
+                  />
+                </IconButton>
+              </Badge>
             </Box>
-            {/* aca el modal
-             */}
+
             <CustomModalContainer open={open} handleClose={handleClose} />
           </Box>
         </Toolbar>
