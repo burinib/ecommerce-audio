@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { menuRoutes } from "./routes";
 import Layout from "../components/layout/Layout";
+import DashboardContainer from "../components/pages/dashboard/DashboardContainer";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 const AppRouter = () => {
   return (
@@ -10,6 +12,11 @@ const AppRouter = () => {
           <Route key={id} path={path} element={<Element />} />
         ))}
       </Route>
+
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/dashboard" element={<DashboardContainer />} />
+      </Route>
+
       <Route path="*" element={<h1>Not found</h1>} />
     </Routes>
   );
