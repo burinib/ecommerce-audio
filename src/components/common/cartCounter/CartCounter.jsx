@@ -6,7 +6,7 @@ import {
 } from "../../../store/cartSlice";
 import { useDispatch } from "react-redux";
 
-const CartCounter = ({ id, quantity }) => {
+const CartCounter = ({ id, quantity, stock }) => {
   const dispatch = useDispatch();
 
   return (
@@ -36,7 +36,12 @@ const CartCounter = ({ id, quantity }) => {
           -
         </Button>
         <Typography>{quantity}</Typography>
-        <Button onClick={() => dispatch(incrementOneById(id))}>+</Button>
+        <Button
+          onClick={() => dispatch(incrementOneById(id))}
+          disabled={quantity >= stock ? true : false}
+        >
+          +
+        </Button>
       </Box>
     </div>
   );

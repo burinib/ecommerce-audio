@@ -18,7 +18,7 @@ export const cartSlice = createSlice({
           if (elemento.id === action.payload.id) {
             return {
               ...elemento,
-              quantity: elemento.quantity + action.payload.quantity,
+              quantity: action.payload.quantity,
             };
           } else {
             return elemento;
