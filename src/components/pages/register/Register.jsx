@@ -12,6 +12,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import "./Register.css";
 import "../../common/custom/customComponent.js";
 import { BotonNaranja } from "../../common/custom/customComponent.js";
+import { register } from "../../../firebaseConfig";
 
 const Register = ({
   showPassword,
@@ -20,11 +21,19 @@ const Register = ({
   handleChange,
   errors,
 }) => {
+  const registrarme = async () => {
+    let res = await register({
+      email: "marta@gmail.com",
+      password: "123456789",
+    });
+    console.log(res);
+  };
+
   return (
     <div className="register-container">
       <div className="register-box">
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          {/*        <div className="form-group">
             <div className="name-field">
               <TextField
                 name="firstName"
@@ -54,7 +63,7 @@ const Register = ({
               error={errors.phone ? true : false}
               helperText={errors.phone}
             />
-          </div>
+          </div> */}
 
           <div className="form-group">
             <TextField
@@ -119,6 +128,7 @@ const Register = ({
                 sx={{ alignItems: "center" }}
                 type="submit"
                 variant="contained"
+                onClick={registrarme}
               >
                 Register
               </BotonNaranja>

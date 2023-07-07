@@ -38,8 +38,6 @@ const RegisterContainer = () => {
     }),
   });
 
-  console.log(errors);
-
   return (
     <Register
       showPassword={showPassword}
