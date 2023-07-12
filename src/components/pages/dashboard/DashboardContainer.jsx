@@ -1,7 +1,9 @@
 import Dashboard from "./Dashboard";
 
 const DashboardContainer = () => {
-  return <Dashboard />;
+  const generarDocumentos = () => {};
+
+  return <Dashboard generarDocumentos={generarDocumentos} />;
 };
 
 export default DashboardContainer;

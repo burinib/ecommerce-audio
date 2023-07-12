@@ -13,9 +13,8 @@ const AppRouter = () => {
         ))}
       </Route>
 
-      <Route element={<ProtectedRoutes />}>
-        <Route path="/dashboard" element={<DashboardContainer />} />
-      </Route>
+      <Route element={<ProtectedRoutes />}></Route>
+      <Route path="/dashboard" element={<DashboardContainer />} />
 
       <Route path="*" element={<h1>Not found</h1>} />
     </Routes>

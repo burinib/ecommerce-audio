@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getProductById } from "../../../services/productsServices";
 import ProductDetail from "./ProductDetail";
 import { addToCart } from "../../../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { db } from "../../../firebaseConfig";
+import { collection, getDoc, doc } from "firebase/firestore";
 
 const ProductDetailContainer = () => {
   const { id } = useParams();
@@ -17,10 +18,11 @@ const ProductDetailContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    let refCollection = collection(db, "productsAudio");
+    let refDoc = doc(refCollection, id);
     const getData = async () => {
-      let data = await getProductById(id);
-
-      setproduct(data);
+      let res = await getDoc(refDoc);
+      setproduct({ ...res.data(), id: res.id });
     };
     getData();
   }, [id]);

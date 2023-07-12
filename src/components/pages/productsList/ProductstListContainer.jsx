@@ -2,22 +2,30 @@ import { useState, useEffect } from "react";
 import ProductsList from "./ProductsList";
 
 import { useParams } from "react-router-dom";
-import { getAllProducts } from "../../../services/productsServices";
+import { db } from "../../../firebaseConfig";
+
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ProductsListContainer = () => {
   const [products, setProducts] = useState([]);
   const { categoryName } = useParams();
-  console.log(products);
 
   useEffect(() => {
+    let refCollection = collection(db, "productsAudio");
+    let filteredCollection = query(
+      refCollection,
+      where("category", "==", categoryName)
+    );
     const getData = async () => {
-      const data = await getAllProducts();
-      let productsByCategory = data.filter(
-        (prod) => prod.category === categoryName
-      );
-      setProducts(productsByCategory);
+      let res = await getDocs(filteredCollection);
+      let productosFinales = res.docs.map((prod) => {
+        return {
+          ...prod.data(),
+          id: prod.id,
+        };
+      });
+      setProducts(productosFinales);
     };
-
     getData();
   }, [categoryName]);
 
