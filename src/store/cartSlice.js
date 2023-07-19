@@ -39,6 +39,7 @@ export const cartSlice = createSlice({
     },
     clearCart: (state) => {
       state.cart = [];
+      localStorage.removeItem("cart");
     },
     removeById: (state, action) => {
       let newArray = state.cart.filter(

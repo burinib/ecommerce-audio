@@ -23,7 +23,7 @@ const auth = getAuth(app);
 
 //login --> export
 
-export const login = async ({ email, password }) => {
+export const onSignIn = async ({ email, password }) => {
   try {
     let res = await signInWithEmailAndPassword(auth, email, password);
     return res;

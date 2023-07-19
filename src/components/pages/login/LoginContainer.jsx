@@ -2,9 +2,10 @@ import { useState } from "react";
 import Login from "./Login";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { login, loginWithGoogle } from "../../../firebaseConfig";
+import { loginWithGoogle } from "../../../firebaseConfig";
 import { loginRedux } from "../../../store/authSlice";
 import { useDispatch } from "react-redux";
+import { login } from "../../../store/authThunk";
 
 const LoginContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,16 +13,15 @@ const LoginContainer = () => {
   const handleShow = () => {
     setShowPassword(!showPassword);
   };
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const { handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    onSubmit: async (data) => {
-      let result = await login(data);
-      dispatch(loginRedux(result.user));
+    onSubmit: (data) => {
+      dispatch(login(data));
     },
     validateOnChange: false,
     validationSchema: Yup.object({
@@ -34,10 +34,10 @@ const LoginContainer = () => {
     }),
   });
 
-  const ingresarConGoogle = async () => {
+  /*   const ingresarConGoogle = async () => {
     let res = await loginWithGoogle();
     dispatch(loginRedux(res.user));
-  };
+  }; */
 
   return (
     <>
@@ -48,7 +48,9 @@ const LoginContainer = () => {
         handleChange={handleChange}
         errors={errors}
       />
-      <button onClick={ingresarConGoogle}>Ingresar con google</button>
+      <button style={{ padding: 20 }} onClick={ingresarConGoogle}>
+        Ingresar con google
+      </button>
     </>
   );
 };

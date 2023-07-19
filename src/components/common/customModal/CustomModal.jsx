@@ -47,11 +47,13 @@ const CustomModal = ({ open, handleClose, cart, dispatch, total }) => {
               />
             </div>
           ))}
+
           <Link to={"/checkout"}>
             <BotonNaranja onClick={handleClose} variant="contained">
               Checkout
             </BotonNaranja>
           </Link>
+
           <Box>
             <h5>Total: </h5>
             <h6>{total}</h6>

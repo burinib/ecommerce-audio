@@ -4,4 +4,6 @@ import authSlice from "./authSlice";
 
 export const store = configureStore({
   reducer: { cartSlice, authSlice },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }),
 });
