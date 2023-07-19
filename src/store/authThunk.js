@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { onSignIn } from "../firebaseConfig";
+import { loginWithGoogle, onSignIn } from "../firebaseConfig";
 
 export const login = createAsyncThunk(
   "login",
@@ -12,6 +12,14 @@ export const login = createAsyncThunk(
     }
   }
 );
-
-/* export const loginGoogle = createAsyncThunk();
- */
+export const loginGoogle = createAsyncThunk(
+  "loginGoogle",
+  async (_, { rejectWithValue }) => {
+    let res = await loginWithGoogle();
+    if (res.user.accesToken) {
+      return res.user;
+    } else {
+      rejectWithValue("ocurrio un error");
+    }
+  }
+);

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { login } from "./authThunk";
+import { login, loginGoogle } from "./authThunk";
 
 const initialState = {
   user: {},
@@ -15,22 +15,25 @@ export const authSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
-      state.accesToken = action.payload.accesToken;
+      state.user = action.payload.userData;
+      state.accessToken = action.payload.accessToken;
       state.isLogged = true;
       state.isLoading = false;
     });
-    builder.addCase(login.fulfilled, (state, action) => {
-      state.accesToken = action.payload.accesToken;
-      state.isLogged = true;
+    builder.addCase(login.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(login.fulfilled, (state) => {
-      state.accesToken = "";
+    builder.addCase(login.rejected, (state) => {
+      state.accessToken = "";
       state.isLogged = false;
       state.isLoading = false;
     });
-    /*     builder.addCase(loginGoogle, (state, action) => {});
-     */
+    builder.addCase(loginGoogle.fulfilled, (state, action) => {
+      state.user = action.payload.userData;
+      state.accessToken = action.payload.accessToken;
+      state.isLogged = true;
+      state.isLoading = false;
+    });
   },
 });
 
