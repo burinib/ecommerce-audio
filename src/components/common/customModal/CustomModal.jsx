@@ -5,19 +5,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { clearCart, removeById } from "../../../store/cartSlice";
 import CartCounter from "../cartCounter/CartCounter";
 
-let stiloModal = {
-  position: "absolute",
-  top: "35%",
-  right: "0%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-  minHeight: "400px",
-};
-
 const CustomModal = ({ open, handleClose, cart, dispatch, total }) => {
   return (
     <div>
@@ -27,7 +14,20 @@ const CustomModal = ({ open, handleClose, cart, dispatch, total }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={stiloModal}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "35%",
+            right: "0%",
+            transform: "translate(-50%, -50%)",
+            width: 400,
+            bgcolor: "background.paper",
+            border: "2px solid #000",
+            boxShadow: 24,
+            p: 4,
+            minHeight: "400px",
+          }}
+        >
           <Button onClick={() => dispatch(clearCart())}>Remove all</Button>
 
           {cart.map((prod) => (
@@ -47,13 +47,11 @@ const CustomModal = ({ open, handleClose, cart, dispatch, total }) => {
               />
             </div>
           ))}
-
           <Link to={"/checkout"}>
             <BotonNaranja onClick={handleClose} variant="contained">
               Checkout
             </BotonNaranja>
           </Link>
-
           <Box>
             <h5>Total: </h5>
             <h6>{total}</h6>

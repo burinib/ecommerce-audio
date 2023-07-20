@@ -80,7 +80,7 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
                 </Link>
               </Box>
 
-              <Badge badgeContent={cart.lenght} color="primary">
+              <Badge badgeContent={cart.length} color="primary">
                 <IconButton onClick={handleOpen}>
                   <ShoppingCartOutlinedIcon
                     sx={{ fontSize: "1.5rem", color: "white" }}

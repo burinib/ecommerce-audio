@@ -7,44 +7,32 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import "./CardTriple.css";
 
 const CardTriple = () => {
+  const products = [
+    { id: 1, name: "HEADPHONES", image: img1, path: "/category/headphones" },
+    { id: 2, name: "SPEAKERS", image: img2, path: "/category/speakers" },
+    { id: 3, name: "EARPHONES", image: img3, path: "/category/earphones" },
+  ];
+
   return (
     <div className="card-triple-container">
-      <div className="card">
-        <CardContent className="card-content">
-          <img src={img1} alt="Product 1" className="card-image" />
-          <Typography>HEADPHONES</Typography>
-          <Link to="/category/headphones">
-            <Button sx={{ top: "25px" }}>
-              SHOP
-              <ArrowRightIcon />
-            </Button>
-          </Link>
-        </CardContent>
-      </div>
-      <div className="card">
-        <CardContent className="card-content">
-          <img src={img2} alt="Product 2" className="card-image" />
-          <Typography>SPEAKERS</Typography>
-          <Link to="/category/speakers">
-            <Button sx={{ top: "25px" }}>
-              SHOP
-              <ArrowRightIcon />
-            </Button>
-          </Link>{" "}
-        </CardContent>
-      </div>
-      <div className="card">
-        <CardContent className="card-content">
-          <img src={img3} alt="Product 3" className="card-image" />
-          <Typography>EARPHONES</Typography>
-          <Link to="/category/earphones">
-            <Button sx={{ top: "25px" }}>
-              SHOP
-              <ArrowRightIcon />
-            </Button>
-          </Link>{" "}
-        </CardContent>
-      </div>
+      {products.map((product) => (
+        <div key={product.id} className="card">
+          <CardContent className="card-content">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="card-image"
+            />
+            <Typography>{product.name}</Typography>
+            <Link to={product.path}>
+              <Button sx={{ top: "25px" }}>
+                SHOP
+                <ArrowRightIcon />
+              </Button>
+            </Link>
+          </CardContent>
+        </div>
+      ))}
     </div>
   );
 };

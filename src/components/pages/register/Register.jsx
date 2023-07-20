@@ -33,8 +33,8 @@ const Register = ({
     <div className="register-container">
       <div className="register-box">
         <form onSubmit={handleSubmit}>
-          {/*        <div className="form-group">
-            <div className="name-field">
+          <div className="form-group">
+            <div className="form-group">
               <TextField
                 name="firstName"
                 label="First Name"
@@ -43,27 +43,8 @@ const Register = ({
                 error={errors.firstName ? true : false}
                 helperText={errors.firstName}
               />
-              <TextField
-                name="lastName"
-                label="Last Name"
-                variant="outlined"
-                onChange={handleChange}
-                error={errors.lastName ? true : false}
-                helperText={errors.lastName}
-              />
             </div>
           </div>
-
-          <div className="form-group">
-            <TextField
-              name="phone"
-              label="Phone"
-              variant="outlined"
-              onChange={handleChange}
-              error={errors.phone ? true : false}
-              helperText={errors.phone}
-            />
-          </div> */}
 
           <div className="form-group">
             <TextField

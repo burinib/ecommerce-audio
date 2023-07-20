@@ -13,15 +13,12 @@ const RegisterContainer = () => {
   const { handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
       firstName: "",
-      lastName: "",
-      phone: "",
       email: "",
       password: "",
       confirmPassword: "",
     },
     onSubmit: (data) => {
       console.log("Form submitted", data);
-      // Aquí puedes realizar las acciones necesarias para registrar al usuario
     },
     validateOnChange: false,
     validationSchema: Yup.object({
