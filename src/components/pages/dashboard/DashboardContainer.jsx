@@ -11,7 +11,7 @@ const DashboardContainer = () => {
   const [data, setData] = useState({});
   const [changesProducts, setChangesProducts] = useState(false);
   const [openCreate, setOpenCreate] = useState(false);
-  const handleCLoseCreate = () => {
+  const handleCloseCreate = () => {
     setOpenCreate(false);
   };
 
@@ -78,7 +78,7 @@ const DashboardContainer = () => {
     data,
     setChangesProducts,
     openCreate,
-    handleCLoseCreate,
+    handleCloseCreate,
     setOpenCreate,
   };
 

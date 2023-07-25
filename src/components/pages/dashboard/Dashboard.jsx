@@ -24,7 +24,7 @@ const Dashboard = ({
   disabled,
   data,
   setChangesProducts,
-  handleCLoseCreate,
+  handleCloseCreate,
   openCreate,
   setOpenCreate,
 }) => {
@@ -82,7 +82,7 @@ const Dashboard = ({
           setChangesProducts={setChangesProducts}
         />
       )}
-      <CreateProductModal open={openCreate} handleCLose={handleCLoseCreate} />
+      <CreateProductModal open={openCreate} handleClose={handleCloseCreate} />
     </div>
   );
 };
