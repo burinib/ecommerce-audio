@@ -1,18 +1,26 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import Dashboard from "./Dashboard";
 import { useEffect, useState } from "react";
 import { db } from "../../../firebaseConfig";
+import Swal from "sweetalert2";
 
 const DashboardContainer = () => {
   const [products, setProducts] = useState([]);
   const [open, setOpen] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [data, setData] = useState({});
+  const [changesProducts, setChangesProducts] = useState(false);
+  const [openCreate, setOpenCreate] = useState(false);
+  const handleCLoseCreate = () => {
+    setOpenCreate(false);
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
 
   useEffect(() => {
+    setChangesProducts(false);
     let refCollection = collection(db, "productsAudio");
 
     const getData = async () => {
@@ -26,29 +34,52 @@ const DashboardContainer = () => {
       setProducts(productosFinales);
     };
     getData();
-  }, []);
+  }, [changesProducts]);
 
   const viewById = (product) => {
     setData(product);
     setDisabled(true);
     setOpen(true);
   };
+
   const editById = (product) => {
     setData(product);
     setDisabled(false);
     setOpen(true);
   };
-  const deleteByID = (id) => {};
+
+  const deleteById = (product) => {
+    Swal.fire({
+      title: `Seguro quieres elimar el producto ${product.name}`,
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Si, eliminar",
+      denyButtonText: `No, cancelar`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        deleteDoc(doc(db, "products", product.id));
+        Swal.fire("Producto eliminado exitosamente", "", "success");
+        setChangesProducts(true);
+      } else if (result.isDenied) {
+        Swal.fire("El producto queda como estaba", "", "info");
+      }
+    });
+  };
 
   let props = {
     products,
     viewById,
     editById,
-    deleteByID,
+    deleteById,
     open,
     handleClose,
     disabled,
     data,
+    setChangesProducts,
+    openCreate,
+    handleCLoseCreate,
+    setOpenCreate,
   };
 
   return <Dashboard {...props} />;

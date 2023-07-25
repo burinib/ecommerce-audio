@@ -17,11 +17,12 @@ const Dashboard = ({
   products,
   viewById,
   editById,
-  deleteByID,
+  deleteById,
   open,
   handleClose,
   disabled,
   data,
+  setChangesProducts,
 }) => {
   return (
     <div>
@@ -58,7 +59,7 @@ const Dashboard = ({
                   <IconButton onClick={() => editById(product)}>
                     <EditIcon />
                   </IconButton>
-                  <IconButton onClick={() => deleteByID(product)}>
+                  <IconButton onClick={() => deleteById(product)}>
                     <DeleteIcon />
                   </IconButton>
                 </TableCell>
@@ -67,12 +68,17 @@ const Dashboard = ({
           </TableBody>
         </Table>
       </TableContainer>
-      <ModalDashboard
-        open={open}
-        data={data}
-        handleClose={handleClose}
-        disabled={disabled}
-      />
+      {open && (
+        <ModalDashboard
+          open={open}
+          data={data}
+          handleClose={handleClose}
+          disabled={disabled}
+          setChangesProducts={setChangesProducts}
+        />
+      )}
+      {/*       <CreateProductModal open={openCreate} handleCLose={handleCLoseCreate} />
+       */}{" "}
     </div>
   );
 };

@@ -1,4 +1,7 @@
-import { Box, Modal, TextField, Typography } from "@mui/material";
+import { Box, Modal, TextField } from "@mui/material";
+import { useFormik } from "formik";
+import { db } from "../../../firebaseConfig";
+import { doc, updateDoc } from "firebase/firestore";
 
 const style = {
   position: "absolute",
@@ -12,9 +15,28 @@ const style = {
   p: 4,
 };
 
-const ModalDashboard = ({ open, data, disabled, handleClose }) => {
-  console.log("desabilta", disabled);
-  console.log("data: ", data);
+const ModalDashboard = ({
+  open,
+  data,
+  disabled,
+  handleClose,
+  setChangesProducts,
+}) => {
+  const { handleSubmit, handleChange } = useFormik({
+    initialValues: {
+      name: data.name,
+      price: data.price,
+    },
+    onSubmit: (x) => {
+      let obj = {
+        ...x,
+        price: +x.price,
+      };
+      updateDoc(doc(db, "products", data.id), obj);
+      setChangesProducts(true);
+      handleClose();
+    },
+  });
   return (
     <div>
       <Modal
@@ -24,19 +46,24 @@ const ModalDashboard = ({ open, data, disabled, handleClose }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            <form>
-              <TextField
-                name="name"
-                defaultValue={data.name}
-                disabled={disabled}
-              />
-              {!disabled && <button>Enviar</button>}
-              <button type="button" onClick={handleClose}>
-                cerrar
-              </button>
-            </form>
-          </Typography>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              name="name"
+              defaultValue={data.name}
+              disabled={disabled}
+              onChange={handleChange}
+            />
+            <TextField
+              name="price"
+              defaultValue={data.price}
+              disabled={disabled}
+              onChange={handleChange}
+            />
+            {!disabled && <button type="submit">Enviar</button>}
+            <button type="button" onClick={handleClose}>
+              Cerrar
+            </button>
+          </form>
         </Box>
       </Modal>
     </div>
