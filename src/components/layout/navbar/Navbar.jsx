@@ -6,7 +6,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 import "./Navbar.css";
 import { menu } from "../../../routes/navigation";
-import CustomModalContainer from "../../common/customModal/customModalContainer";
+import CustomModalContainer from "../../common/customModal/CustomModalContainer";
 
 const Navbar = ({ handleOpen, handleClose, open, cart }) => {
   return (
