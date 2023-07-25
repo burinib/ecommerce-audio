@@ -25,35 +25,27 @@ const ProductsList = ({ products, categoryName }) => {
           {categoryName}
         </Typography>
       </Box>
-      {products.map((product, i) => {
+      {products.map((product) => {
         return (
-          <div key={product.id}>
-            <h1
-              className="PruebaColor"
-              style={{ flex: i % 2 === 0 ? "red" : "yellow" }}
-            >
-              {product.name}
-            </h1>
-            <h1
-              className="PruebaColor"
-              style={{ flex: i % 2 === 0 ? "red" : "yellow" }}
-            >
-              {product.descr}
-            </h1>
-            <Link to={`/productDetail/${product.id}`}>
-              <Button
-                sx={{
-                  width: "160px",
-                  padding: "10px",
-                }}
-                variant="contained"
-              >
-                SEE PRODUCT
-              </Button>
-              <Box>
-                <img src={product.image} width={"200 px"} />
-              </Box>
-            </Link>
+          <div className="container_list" key={product.id}>
+            <div className="image-container">
+              <img className="img_list" src={product.image} />
+            </div>
+            <div className="info-container">
+              <h1 className="name_list">{product.name}</h1>
+              <h1 className="description_list">{product.description}</h1>
+              <Link to={`/productDetail/${product.id}`}>
+                <Button
+                  sx={{
+                    width: "160px",
+                    padding: "10px",
+                  }}
+                  variant="contained"
+                >
+                  SEE PRODUCT
+                </Button>
+              </Link>
+            </div>
           </div>
         );
       })}

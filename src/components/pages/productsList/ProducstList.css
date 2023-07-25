@@ -1,3 +1,42 @@
-.PruebaColor {
-  color: black;
+.container_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.image-container {
+  flex: 1;
+  padding-right: 5%;
+}
+
+.info-container {
+  flex: 1;
+  padding-left: 5%;
+  height: 560px;
+  padding-top: 80px;
+}
+
+.img_list {
+  width: 540px;
+  height: 560px;
+  border-radius: 10px;
+}
+
+.name_list {
+  font-family: "monospace";
+  font-weight: 700px;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.43px;
+}
+.description_list {
+  font-family: "monospace";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  padding-top: 55px;
+  opacity: 50%;
 }
