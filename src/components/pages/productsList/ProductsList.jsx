@@ -34,6 +34,12 @@ const ProductsList = ({ products, categoryName }) => {
             >
               {product.name}
             </h1>
+            <h1
+              className="PruebaColor"
+              style={{ flex: i % 2 === 0 ? "red" : "yellow" }}
+            >
+              {product.descr}
+            </h1>
             <Link to={`/productDetail/${product.id}`}>
               <Button
                 sx={{
@@ -44,6 +50,9 @@ const ProductsList = ({ products, categoryName }) => {
               >
                 SEE PRODUCT
               </Button>
+              <Box>
+                <img src={product.image} width={"200 px"} />
+              </Box>
             </Link>
           </div>
         );

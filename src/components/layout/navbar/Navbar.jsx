@@ -68,6 +68,7 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
                 );
               })}
             </Box>
+            <Link to="/dashboard">Ir al dashboard</Link>
             <Box className="usersContainer">
               <Box className="loginBox">
                 <Link to="/register" className="linkSign">

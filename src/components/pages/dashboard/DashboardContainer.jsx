@@ -58,7 +58,7 @@ const DashboardContainer = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        deleteDoc(doc(db, "products", product.id));
+        deleteDoc(doc(db, "productsAudio", product.id));
         Swal.fire("Producto eliminado exitosamente", "", "success");
         setChangesProducts(true);
       } else if (result.isDenied) {

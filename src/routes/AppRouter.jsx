@@ -3,6 +3,7 @@ import { menuRoutes } from "./routes";
 import Layout from "../components/layout/Layout";
 import DashboardContainer from "../components/pages/dashboard/DashboardContainer";
 import ProtectedRoutes from "./ProtectedRoutes";
+import DashboardUsers from "../components/pages/dashboardUsers/DashboardUsers";
 
 const AppRouter = () => {
   return (
@@ -11,10 +12,11 @@ const AppRouter = () => {
         {menuRoutes.map(({ id, path, Element }) => (
           <Route key={id} path={path} element={<Element />} />
         ))}
+        <Route path="/dashboardUsers" element={<DashboardUsers />} />
+        <Route path="/dashboard" element={<DashboardContainer />} />
       </Route>
 
       <Route element={<ProtectedRoutes />}></Route>
-      <Route path="/dashboard" element={<DashboardContainer />} />
 
       <Route path="*" element={<h1>Not found</h1>} />
     </Routes>

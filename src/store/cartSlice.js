@@ -26,10 +26,10 @@ export const cartSlice = createSlice({
         });
 
         state.cart = newArr;
-        localStorage.setItem("carrito", JSON.stringify(newArr));
+        localStorage.setItem("cart", JSON.stringify(newArr));
       } else {
         localStorage.setItem(
-          "carrito",
+          "cart",
           JSON.stringify([...state.cart, action.payload])
         );
         state.cart = [...state.cart, action.payload];
@@ -45,8 +45,8 @@ export const cartSlice = createSlice({
       let newArray = state.cart.filter(
         (product) => product.id !== action.payload
       );
+      localStorage.setItem("cart", JSON.stringify(newArray));
       state.cart = newArray;
-      localStorage.setItem("carrito", JSON.stringify(newArray));
     },
     getTotalPrice: (state) => {
       const total = state.cart.reduce((acc, elemento) => {

@@ -33,7 +33,7 @@ const ModalDashboard = ({
         price: +x.price,
       };
       updateDoc(doc(db, "products", data.id), obj);
-      setChangesProducts(true);
+      setChangesProducts();
       handleClose();
     },
   });

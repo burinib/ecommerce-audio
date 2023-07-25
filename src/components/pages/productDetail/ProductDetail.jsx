@@ -6,6 +6,7 @@ import CardBringingContainer from "../../common/cardBringing/CardBringingContain
 const ProductDetail = ({ product, onAdd, initialQuantity }) => {
   return (
     <Box>
+      <img className="" src={product.image} width={"200 px"} />
       <h3 className="productName">{product.name}</h3>
       <h3 className="producDescription">{product.description}</h3>
       <CounterContainer
