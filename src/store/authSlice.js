@@ -11,7 +11,14 @@ const initialState = {
 export const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      state.user = {};
+      state.accessToken = "";
+      state.isLogged = false;
+      state.isLoading = false;
+    },
+  },
 
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
