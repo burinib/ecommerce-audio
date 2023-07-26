@@ -3,6 +3,9 @@ import CounterContainer from "../../common/counter/CounterContainer";
 import "./ProductDetail.css";
 import CardTripleContainer from "../../common/cardTriple/CardTripleContainer";
 import CardBringingContainer from "../../common/cardBringing/CardBringingContainer";
+import FeaturesContainer from "../../common/features/FeaturesContainer";
+import GaleryThirdContainer from "../../common/galeryThird/GaleryThirdContainer";
+import AlsoLikeContainer from "../../common/alsoLike/AlsoLikeContainer";
 
 const ProductDetail = ({ product, onAdd, initialQuantity }) => {
   return (
@@ -39,6 +42,9 @@ const ProductDetail = ({ product, onAdd, initialQuantity }) => {
           </Box>
         </Box>
       </Box>
+      <FeaturesContainer product={product} />
+      <GaleryThirdContainer product={product} />
+      <AlsoLikeContainer />
       <CardTripleContainer />
       <CardBringingContainer />
     </Box>
