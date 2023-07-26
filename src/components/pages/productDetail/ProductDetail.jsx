@@ -8,23 +8,35 @@ const ProductDetail = ({ product, onAdd, initialQuantity }) => {
   return (
     <Box sx={{ maxWidth: "1200px", margin: "0 auto" }}>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Box sx={{ width: "540px", height: "560px", margin: "20px" }}>
+        <Box sx={{ width: "540px" }}>
           <img
             className="image_detail"
             src={product.image}
             alt={product.name}
           />
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", margin: "20px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            marginLeft: "20px",
+            marginTop: "120px",
+          }}
+        >
           <h3 className="productName">{product.name}</h3>
-          <h3 className="producDescription">{product.description}</h3>
+
+          <h3 className="productDescription">{product.description}</h3>
+
           <h3 className="price_product">$ {product.price}</h3>
-          <CounterContainer
-            onAdd={onAdd}
-            initial={product.quantity}
-            initialQuantity={initialQuantity}
-            stock={product.stock}
-          />
+
+          <Box>
+            <CounterContainer
+              onAdd={onAdd}
+              initial={product.quantity}
+              initialQuantity={initialQuantity}
+              stock={product.stock}
+            />
+          </Box>
         </Box>
       </Box>
       <CardTripleContainer />

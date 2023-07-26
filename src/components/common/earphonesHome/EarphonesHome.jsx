@@ -14,7 +14,7 @@ const EarphonesHome = () => {
           gap: "20px",
           width: "80%",
           margin: "0 auto",
-          padding: "10px",
+          paddingTop: "10px",
         }}
       >
         <Box

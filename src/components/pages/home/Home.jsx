@@ -25,7 +25,6 @@ const Home = () => {
           sx={{
             color: "white",
             marginBottom: "20px",
-            fontFamily: "Roboto",
             textTransform: "uppercase",
             fontSize: "40px",
           }}
@@ -36,7 +35,6 @@ const Home = () => {
           sx={{
             color: "white",
             marginBottom: "20px",
-            fontFamily: "Roboto",
           }}
         >
           Experience natural, lifelike audio and exceptional build quality made
