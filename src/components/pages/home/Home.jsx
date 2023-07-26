@@ -48,7 +48,7 @@ const Home = () => {
           </Link>
         </Box>
       </Box>
-      <Box sx={{ width: "80%", marginLeft: "10%" }}>
+      <Box>
         <CardTripleContainer />
         <ParlanteOrangeContainer />
         <GrisHomeContainer />

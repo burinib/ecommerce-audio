@@ -12,8 +12,9 @@ const Footer = () => {
     <Box
       sx={{
         backgroundColor: "rgb(25, 25, 25)",
-        height: "20vh",
         width: "100%",
+        flexShrink: 0, // Asegura que el footer no se encoja con el contenido
+        marginTop: "auto", // Empuja el footer hacia abajo al ocupar todo el espacio disponible
       }}
     >
       <Box sx={{ display: "flex" }}>

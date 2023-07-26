@@ -9,6 +9,7 @@ const CardBringing = () => {
         alignItems: "center",
         margin: "40px auto",
         boxShadow: "none",
+        width: "80%",
       }}
     >
       <CardContent

@@ -7,17 +7,26 @@ import { Link } from "react-router-dom";
 const EarphonesHome = () => {
   return (
     <div>
-      <Box sx={{ display: "flex", width: "100%", paddingTop: "10px" }}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: "20px",
+          width: "80%",
+          margin: "0 auto",
+          padding: "10px",
+        }}
+      >
         <Box
           sx={{
-            width: "50%",
-            flexBasis: "50%",
-            marginRight: "20px",
+            borderRadius: "8px",
+            overflow: "hidden",
           }}
         >
           <img
             src={imgAuriHome}
-            style={{ width: "100%", borderRadius: "8px" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            alt="Earphones YX1"
           />
         </Box>
         <Box
@@ -27,8 +36,6 @@ const EarphonesHome = () => {
             justifyContent: "center",
             backgroundColor: "#F1F1F1",
             alignItems: "center",
-            width: "50%",
-            flexBasis: "50%",
             borderRadius: "8px",
           }}
         >

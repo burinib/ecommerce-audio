@@ -6,29 +6,36 @@ import { Link } from "react-router-dom";
 
 const ParlanteOrange = () => {
   return (
-    <div className="parlante-orange-container">
-      <CardContent>
-        <Box className="content-wrapper">
-          <Box className="sectionImg">
-            <img src={imgSpeaker} alt="Product 1" className="card-image" />
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <div className="parlante-orange-container">
+        <CardContent>
+          <Box className="content-wrapper">
+            <Box className="sectionImg">
+              <img src={imgSpeaker} alt="Product 1" className="card-image" />
+            </Box>
+            <Box className="right-section">
+              <Typography sx={{ color: "white", fontSize: "56px" }}>
+                ZX9 SPEAKER
+              </Typography>
+              <Typography className="description_orange">
+                Upgrade to premium speakers that are phenomenally built to
+                deliver truly remarkable sound.
+              </Typography>
+              <Link to="/category/speakers">
+                <BotonNaranja className="button" variant="contained">
+                  SET PRODUCT
+                </BotonNaranja>
+              </Link>
+            </Box>
           </Box>
-          <Box className="right-section">
-            <Typography sx={{ color: "white", fontSize: "56px" }}>
-              ZX9 SPEAKER
-            </Typography>
-            <Typography className="description">
-              Upgrade to premium speakers that are phenomenally built to deliver
-              truly remarkable sound.
-            </Typography>
-            <Link to="/category/speakers">
-              <BotonNaranja className="button" variant="contained">
-                SET PRODUCT
-              </BotonNaranja>
-            </Link>
-          </Box>
-        </Box>
-      </CardContent>
-    </div>
+        </CardContent>
+      </div>
+    </Box>
   );
 };
 

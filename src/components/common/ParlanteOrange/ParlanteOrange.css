@@ -1,8 +1,6 @@
 .parlante-orange-container {
-  display: flex;
-  justify-content: center;
   background-color: #d87d4a;
-  width: 100%;
+  width: 80%;
   border-radius: 8px;
 }
 
@@ -18,6 +16,13 @@
 .card-image {
   width: 410px;
   height: 493px;
+}
+.description_orange {
+  color: white;
+  width: 349px;
+  height: 75px;
+  top: 140px;
+  opacity: 75%;
 }
 
 .right-section {
