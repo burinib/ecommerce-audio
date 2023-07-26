@@ -1,6 +1,5 @@
-.productName {
-  color: red;
-}
-.producDescription {
-  color: red;
+.image_detail {
+  width: 540px;
+  height: 500px;
+  border-radius: 8px;
 }
