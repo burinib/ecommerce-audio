@@ -3,12 +3,7 @@ import headphones from "./../../../assets/cart/image-xx99-mark-two-headphones.jp
 import headphones2 from "./../../../assets/cart/image-xx59-headphones.jpg";
 import speaker from "./../../../assets/cart/image-zx7-speaker.jpg";
 import "./AlsoLike.css";
-
-/* const products = [
-  { id: 1, name: "HEADPHONES", image: img1, path: "/category/headphones" },
-  { id: 2, name: "SPEAKERS", image: img2, path: "/category/speakers" },
-  { id: 3, name: "EARPHONES", image: img3, path: "/category/earphones" },
-]; */
+import { Link } from "react-router-dom";
 
 const AlsoLike = () => {
   return (
@@ -19,21 +14,27 @@ const AlsoLike = () => {
           <img className="also_img" src={headphones} alt="" />
           <h2 className="also_name_product">XX99 MARK II</h2>
           <div className="also_button">
-            <Button variant="contained">SEE PRODUCT </Button>
+            <Link to="/category/earphones">
+              <Button variant="contained">SEE PRODUCT </Button>
+            </Link>{" "}
           </div>
         </CardContent>
         <CardContent>
           <img className="also_img" src={headphones2} alt="" />
           <h2 className="also_name_product">XX59</h2>
           <div className="also_button">
-            <Button variant="contained">SEE PRODUCT </Button>
+            <Link to="/category/earphones">
+              <Button variant="contained">SEE PRODUCT </Button>
+            </Link>{" "}
           </div>
         </CardContent>
         <CardContent>
           <img className="also_img" src={speaker} alt="" />
           <h2 className="also_name_product">ZX7 SPEAKER</h2>
           <div className="also_button">
-            <Button variant="contained">SEE PRODUCT </Button>
+            <Link to="/category/speakers">
+              <Button variant="contained">SEE PRODUCT </Button>
+            </Link>
           </div>
         </CardContent>
       </div>

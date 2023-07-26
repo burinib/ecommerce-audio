@@ -9,7 +9,7 @@ import AlsoLikeContainer from "../../common/alsoLike/AlsoLikeContainer";
 
 const ProductDetail = ({ product, onAdd, initialQuantity }) => {
   return (
-    <Box sx={{ maxWidth: "1200px", margin: "0 auto" }}>
+    <Box sx={{ width: "100%", margin: "0 auto" }}>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box sx={{ width: "540px" }}>
           <img
