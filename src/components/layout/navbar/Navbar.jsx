@@ -52,12 +52,14 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
               height: "8vh",
             }}
           >
-            <Link to="/">
-              <img
-                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
-                alt=""
-              />
-            </Link>
+            <Box sx={{}}>
+              <Link to="/">
+                <img
+                  src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
+                  alt=""
+                />
+              </Link>
+            </Box>
 
             <Box className="containerLinks">
               {menu.map((item) => {

@@ -1,8 +1,8 @@
 import { Box, SvgIcon, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { menu } from "../../../routes/navigation";
 
 import "./Footer.css";
@@ -53,9 +53,21 @@ const Footer = () => {
         </Box>
         <Box sx={{ display: "flex", alignItems: "flex-end" }}>
           <Box sx={{ display: "flex", gap: "15px" }}>
-            <SvgIcon component={FacebookIcon} sx={{ color: "white" }} />
-            <SvgIcon component={TwitterIcon} sx={{ color: "white" }} />
-            <SvgIcon component={InstagramIcon} sx={{ color: "white" }} />
+            <Link
+              to="https://github.com/burinib/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SvgIcon component={GitHubIcon} sx={{ color: "white" }} />
+            </Link>
+            <Link
+              to="https://www.linkedin.com/in/braian-burini-a440501a8/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SvgIcon component={LinkedInIcon} sx={{ color: "white" }} />
+            </Link>
+            {/* <SvgIcon component={InstagramIcon} sx={{ color: "white" }} /> */}
           </Box>
         </Box>
       </Box>
