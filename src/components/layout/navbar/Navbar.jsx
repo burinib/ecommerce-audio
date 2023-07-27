@@ -75,6 +75,21 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
                 );
               })}
             </Box>
+
+            <Link to="/dashboard">.</Link>
+            <Badge badgeContent={cart.length} color="primary">
+              <IconButton onClick={handleOpen}>
+                <ShoppingCartOutlinedIcon
+                  sx={{
+                    fontSize: "1.5rem",
+                    color: "white",
+                    "&:hover": {
+                      color: "#fbaf85",
+                    },
+                  }}
+                />
+              </IconButton>
+            </Badge>
             <Box className="usersContainer">
               <Box className="loginBox">
                 <Link to="/register" className="linkSign">
@@ -86,21 +101,6 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
                   LOGIN
                 </Link>
               </Box>
-
-              <Badge badgeContent={cart.length} color="primary">
-                <IconButton onClick={handleOpen}>
-                  <ShoppingCartOutlinedIcon
-                    sx={{
-                      fontSize: "1.5rem",
-                      color: "white",
-                      "&:hover": {
-                        color: "#fbaf85",
-                      },
-                    }}
-                  />
-                </IconButton>
-                <Link to="/dashboard">.</Link>
-              </Badge>
             </Box>
 
             <CustomModalContainer open={open} handleClose={handleClose} />

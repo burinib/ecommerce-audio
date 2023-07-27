@@ -28,3 +28,21 @@
   gap: 5px;
   width: 100%;
 }
+
+@media (max-width: 600px) {
+  .register-container {
+    height: 100%; /* Ajustar altura al 100% de la ventana en dispositivos móviles */
+  }
+
+  .register-box {
+    width: 80%;
+  }
+
+  .form-group {
+    height: auto; /* Eliminar altura fija para ajustar al contenido en móviles */
+  }
+
+  .name-field {
+    flex-direction: column; /* Colocar elementos en columna para móviles */
+  }
+}

@@ -1,7 +1,6 @@
 import { Box, SvgIcon, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { menu } from "../../../routes/navigation";
 
@@ -58,16 +57,21 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <SvgIcon component={GitHubIcon} sx={{ color: "white" }} />
+              <SvgIcon
+                component={GitHubIcon}
+                sx={{ color: "white", "&:hover": { color: "#fbaf85" } }}
+              />
             </Link>
             <Link
               to="https://www.linkedin.com/in/braian-burini-a440501a8/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <SvgIcon component={LinkedInIcon} sx={{ color: "white" }} />
+              <SvgIcon
+                component={LinkedInIcon}
+                sx={{ color: "white", "&:hover": { color: "#fbaf85" } }}
+              />
             </Link>
-            {/* <SvgIcon component={InstagramIcon} sx={{ color: "white" }} /> */}
           </Box>
         </Box>
       </Box>
