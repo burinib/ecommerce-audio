@@ -14,6 +14,10 @@
   color: white;
   text-decoration: none;
 }
+.Links:hover {
+  color: #fbaf85;
+  text-decoration: none;
+}
 
 .boxContainer {
   border-bottom: solid 1px rgba(248, 248, 248, 0.281);
@@ -22,6 +26,9 @@
 
 .cartIcon {
   color: white;
+}
+.cartIcon:hover {
+  color: #fbaf85;
 }
 
 .usersContainer {
@@ -43,6 +50,7 @@
   margin: 0 !important;
   text-decoration: none;
   color: white;
+  font-size: 14px;
 }
 
 .usersContainer .loginBox .linkSign:hover {

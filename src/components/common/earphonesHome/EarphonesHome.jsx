@@ -55,6 +55,10 @@ const EarphonesHome = () => {
                 color: "black",
                 borderRadius: "0px",
                 fontWeight: "bold",
+                "&:hover": {
+                  backgroundColor: "black",
+                  color: "#e9e9e9",
+                },
               }}
             >
               See Product

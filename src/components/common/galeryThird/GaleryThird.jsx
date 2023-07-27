@@ -1,12 +1,13 @@
+import "./Galerythird.css";
+
 const GaleryThird = ({ product }) => {
   return (
-    <div>
-      <div>
-        <h1>galeri</h1>
+    <div className="container_galery">
+      <div className="column1">
         <img src={product?.gallery?.first} alt="" />
         <img src={product?.gallery?.second} alt="" />
-        <img src={product?.gallery?.third} alt="" />
       </div>
+      <img src={product?.gallery?.third} alt="" />
     </div>
   );
 };

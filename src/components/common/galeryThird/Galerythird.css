@@ -1,0 +1,33 @@
+/* Galerythird.css */
+.container_galery {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 635px;
+  column-gap: 20px;
+}
+
+.container_galery .column1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container_galery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Estilos específicos para la primera y segunda imagen */
+.container_galery .column1 img:first-child,
+.container_galery .column1 img:last-child {
+  width: 445px;
+  height: 280px;
+}
+
+/* Estilos específicos para la tercera imagen */
+.container_galery img:last-child {
+  width: 635px;
+  height: 592px;
+}

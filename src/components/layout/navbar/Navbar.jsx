@@ -73,25 +73,31 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
                 );
               })}
             </Box>
-            <Link to="/dashboard">Ir al dashboard</Link>
             <Box className="usersContainer">
               <Box className="loginBox">
                 <Link to="/register" className="linkSign">
                   {" "}
-                  Register{" "}
+                  REGISTER{" "}
                 </Link>
                 <hr />
                 <Link to="/login" className="linkSign">
-                  Login
+                  LOGIN
                 </Link>
               </Box>
 
               <Badge badgeContent={cart.length} color="primary">
                 <IconButton onClick={handleOpen}>
                   <ShoppingCartOutlinedIcon
-                    sx={{ fontSize: "1.5rem", color: "white" }}
+                    sx={{
+                      fontSize: "1.5rem",
+                      color: "white",
+                      "&:hover": {
+                        color: "#fbaf85",
+                      },
+                    }}
                   />
                 </IconButton>
+                <Link to="/dashboard">.</Link>
               </Badge>
             </Box>
 

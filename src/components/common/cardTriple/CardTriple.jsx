@@ -25,7 +25,15 @@ const CardTriple = () => {
             />
             <Typography>{product.name}</Typography>
             <Link to={product.path}>
-              <Button sx={{ top: "25px" }}>
+              <Button
+                sx={{
+                  top: "25px",
+                  color: "grey",
+                  "&:hover": {
+                    color: "#fbaf85",
+                  },
+                }}
+              >
                 SHOP
                 <ArrowRightIcon />
               </Button>

@@ -42,7 +42,19 @@ const Home = () => {
         </Typography>
         <Box sx={{ marginTop: "auto", alignSelf: "flex-start" }}>
           <Link to="/category/headphones">
-            <BotonNaranja variant="contained">See Product</BotonNaranja>
+            <BotonNaranja
+              variant="contained"
+              sx={{
+                borderRadius: "0px",
+                "&:hover": {
+                  backgroundColor: "#191919",
+                  borderRadius: "0px",
+                  borderWidth: "1px  white",
+                },
+              }}
+            >
+              See Product
+            </BotonNaranja>
           </Link>
         </Box>
       </Box>
