@@ -13,35 +13,33 @@ const Footer = () => {
       sx={{
         backgroundColor: "rgb(25, 25, 25)",
         width: "100%",
-        flexShrink: 0, // Asegura que el footer no se encoja con el contenido
-        marginTop: "auto", // Empuja el footer hacia abajo al ocupar todo el espacio disponible
+        height: "100%",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <Box sx={{ paddingTop: "15px" }}>
+      <Box sx={{ width: "80%", margin: "0 auto", display: "flex" }}>
+        <Box sx={{ paddingTop: "35px" }}>
           <img
             src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
             alt=""
           />
         </Box>
         <Box className="containerLinksFooter">
-          <Box className="containerLinks">
-            {menu.map((item) => {
-              return (
-                <Link
-                  className="Links"
-                  key={item.id}
-                  sx={{ flexGrow: 1 }}
-                  to={item.path}
-                >
-                  {item.title}
-                </Link>
-              );
-            })}
-          </Box>
+          {menu.map((item) => {
+            return (
+              <Link
+                className="Links"
+                key={item.id}
+                sx={{ flexGrow: 1 }}
+                to={item.path}
+              >
+                {item.title}
+              </Link>
+            );
+          })}
         </Box>
       </Box>
-      <Box sx={{ display: "flex" }}>
+
+      <Box sx={{ width: "80%", margin: "0 auto", display: "flex" }}>
         <Box>
           <Typography
             className="textFooter"
@@ -53,7 +51,7 @@ const Footer = () => {
             demo facility - we’re open 7 days a week.
           </Typography>
         </Box>
-        <Box>
+        <Box sx={{ display: "flex", alignItems: "flex-end" }}>
           <Box sx={{ display: "flex", gap: "15px" }}>
             <SvgIcon component={FacebookIcon} sx={{ color: "white" }} />
             <SvgIcon component={TwitterIcon} sx={{ color: "white" }} />
@@ -61,10 +59,8 @@ const Footer = () => {
           </Box>
         </Box>
       </Box>
-      <Box>
-        <Typography
-          sx={{ fontSize: "12px", color: "white", paddingTop: "20px" }}
-        >
+      <Box sx={{ width: "80%", margin: "0 auto", paddingBottom: "20px" }}>
+        <Typography sx={{ fontSize: "12px", color: "white" }}>
           Copyright 2021. All Rights Reserved
         </Typography>
       </Box>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const AlsoLike = () => {
   return (
-    <div style={{ paddingTop: "25px" }}>
+    <div style={{ paddingTop: "100px" }}>
       <h2 className="also_tittle">YOU MAY ALSO LIKE</h2>
       <div className="also_container">
         <CardContent>

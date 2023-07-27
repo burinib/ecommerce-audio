@@ -9,14 +9,10 @@
   text-decoration: none;
   font-style: normal;
   font-weight: 500;
-  font-size: 15px;
-  line-height: 25px;
-  mix-blend-mode: normal;
-  padding-left: 15px;
 }
 
 .textFooter {
-  width: 50%;
+  width: 60%;
   color: white;
   font-style: normal;
   font-weight: 500;
@@ -26,4 +22,16 @@
   opacity: 0.5;
   padding-bottom: 25px;
   opacity: 0.5;
+}
+
+.containerLinksFooter {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 25px;
+  padding-top: 35px;
 }
