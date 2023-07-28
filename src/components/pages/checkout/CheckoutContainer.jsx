@@ -9,7 +9,7 @@ const CheckoutContainer = () => {
   const createPreference = async () => {
     try {
       const response = await axios.post(
-        "https://back-mp.vercel.app/create_preference",
+        "http://localhost:8080/create_preference",
         [
           {
             title: "zapatilla nilo",
