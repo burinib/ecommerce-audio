@@ -7,7 +7,7 @@
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
-  line-height: 25px;
+  padding-top: 8px;
 }
 
 .Links {
@@ -17,6 +17,10 @@
 .Links:hover {
   color: #fbaf85;
   text-decoration: none;
+}
+
+.imgAudioPhile {
+  background-color: red;
 }
 
 .boxContainer {
@@ -44,6 +48,10 @@
   flex-direction: row;
   gap: 0.5rem;
   margin-left: 1rem;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding-top: 8px;
 }
 
 .usersContainer .loginBox .linkSign {

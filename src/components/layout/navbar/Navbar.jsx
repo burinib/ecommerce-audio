@@ -20,7 +20,9 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
           }}
         >
           <Box
-            sx={{ display: { xs: "flex", md: "none" }, alignItems: "center" }}
+            sx={{
+              display: { xs: "flex", md: "none" },
+            }}
           >
             <IconButton
               size="large"
@@ -31,7 +33,6 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
             >
               <MenuIcon />
             </IconButton>
-
             <img
               src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
               alt=""
@@ -52,7 +53,11 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
               height: "8vh",
             }}
           >
-            <Box sx={{}}>
+            <Box
+              sx={{
+                paddingTop: "10px",
+              }}
+            >
               <Link to="/">
                 <img
                   src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
@@ -77,19 +82,26 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
             </Box>
 
             <Link to="/dashboard">.</Link>
-            <Badge badgeContent={cart.length} color="primary">
-              <IconButton onClick={handleOpen}>
-                <ShoppingCartOutlinedIcon
-                  sx={{
-                    fontSize: "1.5rem",
-                    color: "white",
-                    "&:hover": {
-                      color: "#fbaf85",
-                    },
-                  }}
-                />
-              </IconButton>
-            </Badge>
+            <Box
+              sx={{
+                display: "flex",
+                paddingTop: "10px",
+              }}
+            >
+              <Badge badgeContent={cart.length} color="primary">
+                <IconButton onClick={handleOpen}>
+                  <ShoppingCartOutlinedIcon
+                    sx={{
+                      fontSize: "1.5rem",
+                      color: "white",
+                      "&:hover": {
+                        color: "#fbaf85",
+                      },
+                    }}
+                  />
+                </IconButton>
+              </Badge>
+            </Box>
             <Box className="usersContainer">
               <Box className="loginBox">
                 <Link to="/register" className="linkSign">
@@ -102,9 +114,8 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
                 </Link>
               </Box>
             </Box>
-
-            <CustomModalContainer open={open} handleClose={handleClose} />
           </Box>
+          <CustomModalContainer open={open} handleClose={handleClose} />
         </Toolbar>
       </AppBar>
     </Box>
