@@ -4,12 +4,12 @@ import axios from "axios";
 
 const CheckoutContainer = () => {
   const [preferenceId, setPreferenceId] = useState(null);
-  initMercadoPago(import.meta.env.VITE_PUBLIC_KEY);
+  initMercadoPago(import.meta.env.VITE_PUBLICKEY);
 
   const createPreference = async () => {
     try {
       const response = await axios.post(
-        "https://back-mp.vercel.app/create_preference",
+        "https://prueba-mp.vercel.app/create_preference",
         [
           {
             title: "zapatilla nilo",
