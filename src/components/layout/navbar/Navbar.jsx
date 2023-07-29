@@ -1,7 +1,6 @@
 import { AppBar, Badge, Box, IconButton, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 import "./Navbar.css";
@@ -19,9 +18,13 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
             width: "100%",
           }}
         >
+          {/* Mobile view: Menu icon, logo, and cart icon */}
           <Box
             sx={{
               display: { xs: "flex", md: "none" },
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "100%",
             }}
           >
             <IconButton
@@ -33,14 +36,28 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
             >
               <MenuIcon />
             </IconButton>
-            <img
-              src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
-              alt=""
-            />
-
-            <ShoppingCartIcon />
+            <Link to="/">
+              <img
+                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
+                alt=""
+              />
+            </Link>
+            <Badge badgeContent={cart.length} color="primary">
+              <IconButton onClick={handleOpen}>
+                <ShoppingCartOutlinedIcon
+                  sx={{
+                    fontSize: "1.5rem",
+                    color: "white",
+                    "&:hover": {
+                      color: "#fbaf85",
+                    },
+                  }}
+                />
+              </IconButton>
+            </Badge>
           </Box>
 
+          {/* Desktop view: Logo, menu links, and cart icon */}
           <Box
             className="boxContainer"
             sx={{

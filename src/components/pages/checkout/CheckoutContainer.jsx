@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import axios from "axios";
+import Checkout from "./Checkout";
 
 const CheckoutContainer = () => {
   const [preferenceId, setPreferenceId] = useState(null);
@@ -40,6 +41,7 @@ const CheckoutContainer = () => {
 
   return (
     <div>
+      <Checkout />
       <button onClick={handleBuy}>Comprar</button>
       {preferenceId && <Wallet initialization={{ preferenceId }} />}
     </div>

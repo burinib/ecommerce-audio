@@ -60,3 +60,116 @@
 .usersContainer .loginBox .linkSign:hover {
   color: #fbaf85;
 }
+
+/* Estilos para pantallas grandes (más de 600px) */
+.boxContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding-top: 8px;
+}
+
+.Links {
+  color: white;
+  text-decoration: none;
+}
+.Links:hover {
+  color: #fbaf85;
+  text-decoration: none;
+}
+
+.usersContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.usersContainer .loginBox {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding-top: 8px;
+}
+
+.usersContainer .loginBox .linkSign {
+  margin: 0 !important;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.usersContainer .loginBox .linkSign:hover {
+  color: #fbaf85;
+}
+
+/* Estilos para pantallas pequeñas (máximo 600px) */
+@media (max-width: 600px) {
+  .boxContainer {
+    justify-content: space-between;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .boxContainer img {
+    display: none;
+  }
+
+  .usersContainer {
+    display: none;
+  }
+
+  /* Estilo para el menú hamburguesa */
+  .menuIconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Estilo para el ícono de menú hamburguesa */
+  .menuIcon {
+    color: white;
+  }
+
+  .menuIcon:hover {
+    color: #fbaf85;
+  }
+
+  /* Estilos para el menú desplegable */
+  .mobileMenu {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding-top: 8px;
+  }
+
+  .mobileLink {
+    color: white;
+    text-decoration: none;
+  }
+
+  .mobileLink:hover {
+    color: #fbaf85;
+    text-decoration: none;
+  }
+
+  /* Mostrar el menú desplegable cuando se active */
+  .showMobileMenu {
+    display: flex;
+  }
+}

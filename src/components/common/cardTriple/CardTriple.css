@@ -43,3 +43,19 @@
 .card-content a {
   margin-top: 36px;
 }
+
+@media (max-width: 600px) {
+  .card-triple-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    top: -50%;
+    padding-top: 25px;
+    margin-top: 25px;
+    align-items: center;
+  }
+}

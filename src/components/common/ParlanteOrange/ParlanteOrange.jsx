@@ -10,6 +10,11 @@ const ParlanteOrange = () => {
       sx={{
         display: "flex",
         justifyContent: "center",
+        "@media (max-width: 600px)": {
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+        },
       }}
     >
       <div className="parlante-orange-container">

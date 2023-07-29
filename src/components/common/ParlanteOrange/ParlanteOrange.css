@@ -42,3 +42,26 @@
   color: black;
   opacity: 50%;
 }
+
+@media (max-width: 600px) {
+  .parlante-orange-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sectionImg {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .description_orange {
+    max-width: 100%; /* Ocupar el 100% del ancho en dispositivos móviles */
+    display: flex;
+    flex-direction: column;
+  }
+}
