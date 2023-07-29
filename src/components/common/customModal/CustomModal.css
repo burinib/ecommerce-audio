@@ -1,0 +1,37 @@
+.img_custom {
+  width: 64px;
+  height: 64px;
+}
+.total_container {
+  padding-bottom: 25px;
+}
+.container_custom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container_delete {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.customTotal {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+}
+.customTotalTittle {
+  font-weight: 500;
+  font-size: 15px;
+  opacity: 80%;
+  line-height: 25px;
+}
+.customTotalPrice {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24.59px;
+  align-items: center;
+}
