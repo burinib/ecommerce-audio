@@ -1,8 +1,7 @@
 import { AppBar, Badge, Box, IconButton, Toolbar } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-
+import DrawerContainer from "./DrawerContainer";
 import "./Navbar.css";
 import { menu } from "../../../routes/navigation";
 import CustomModalContainer from "../../common/customModal/CustomModalContainer";
@@ -27,15 +26,7 @@ const Navbar = ({ handleOpen, handleClose, open, cart }) => {
               width: "100%",
             }}
           >
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <DrawerContainer />
             <Link to="/">
               <img
                 src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
