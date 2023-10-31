@@ -1,7 +1,9 @@
+/* Estilos para pantallas grandes (más de 600px) */
 .parlante-orange-container {
   background-color: #d87d4a;
   width: 80%;
   border-radius: 8px;
+  display: flex;
 }
 
 .content-wrapper {
@@ -17,6 +19,7 @@
   width: 410px;
   height: 493px;
 }
+
 .description_orange {
   color: white;
   width: 349px;
@@ -37,31 +40,31 @@
   background-color: black !important;
   border-radius: 0px !important;
 }
+
 .button:hover {
   background-color: #e9e9e9 !important;
   color: black;
   opacity: 50%;
 }
-
+.mobile-image {
+  display: none;
+}
+/* Estilos para pantallas pequeñas (máximo 600px) */
 @media (max-width: 600px) {
   .parlante-orange-container {
-    display: flex;
     flex-direction: column;
   }
 
   .sectionImg {
-    display: flex;
-    flex-direction: column;
+    display: none;
   }
 
-  .right-section {
-    display: flex;
-    flex-direction: column;
+  .mobile-image {
+    width: 100%;
+    height: auto;
   }
 
   .description_orange {
-    max-width: 100%; /* Ocupar el 100% del ancho en dispositivos móviles */
-    display: flex;
-    flex-direction: column;
+    width: 100%; /* Ocupar el 100% del ancho en dispositivos móviles */
   }
 }

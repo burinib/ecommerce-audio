@@ -25,7 +25,6 @@
   .box-container {
     background-image: url(../../../assets/home/mobile/image-header.jpg);
     width: 100%;
-    height: 100vh; /* Ajusta la altura para ocupar toda la pantalla móvil */
   }
 
   .content-container {

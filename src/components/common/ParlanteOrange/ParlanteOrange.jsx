@@ -10,14 +10,13 @@ const ParlanteOrange = () => {
       sx={{
         display: "flex",
         justifyContent: "center",
-        "@media (max-width: 600px)": {
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-        },
       }}
     >
       <div className="parlante-orange-container">
+        <img
+          src="../../../assets/home/mobile/image-speaker-zx9.png"
+          className="mobile-image"
+        />
         <CardContent>
           <Box className="content-wrapper">
             <Box className="sectionImg">
