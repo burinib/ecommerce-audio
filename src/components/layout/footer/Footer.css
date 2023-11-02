@@ -35,3 +35,34 @@
   line-height: 25px;
   padding-top: 35px;
 }
+
+/* Estilos para dispositivos móviles */
+/* Estilos para dispositivos móviles */
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .containerLinksFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .textFooter {
+    width: 100%; /* Ajusta el ancho del texto al 100% */
+  }
+
+  .containerLinksFooter a {
+    text-align: center;
+  }
+
+  .social-icons {
+    text-align: center; /* Centra las redes sociales */
+    margin-top: 20px; /* Espacio superior para separar el texto del pie de página */
+  }
+
+  .audiophile-logo {
+    text-align: center; /* Centra la imagen de Audiophile */
+    margin: 20px 0; /* Espacio superior e inferior para separar la imagen del texto */
+  }
+}

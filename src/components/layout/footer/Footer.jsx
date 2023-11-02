@@ -9,6 +9,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <Box
+      className="audiophile-logo"
       sx={{
         backgroundColor: "rgb(25, 25, 25)",
         width: "100%",
