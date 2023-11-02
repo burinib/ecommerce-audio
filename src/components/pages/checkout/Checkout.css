@@ -1,0 +1,33 @@
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 58vh;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.form-group {
+}
+
+button {
+  text-transform: uppercase;
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    height: auto;
+  }
+
+  .form {
+    padding: 10px;
+  }
+}
