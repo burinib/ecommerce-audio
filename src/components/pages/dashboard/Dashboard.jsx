@@ -1,4 +1,5 @@
 import {
+  Box,
   IconButton,
   Paper,
   Table,
@@ -13,6 +14,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ModalDashboard from "../../common/modalDashboard/ModalDashboard";
 import CreateProductModal from "../../common/createProductModal/CreateProductModal";
+import "./Dashboar.css";
 const Dashboard = ({
   products,
   viewById,
@@ -28,19 +30,38 @@ const Dashboard = ({
   setOpenCreate,
 }) => {
   return (
-    <div>
-      <h1>Aca manipulo los datos por que soy el admin</h1>
-      <button onClick={() => setOpenCreate(true)}>Agregar</button>
+    <Box sx={{ backgroundColor: "rgb(25, 25, 25)" }}>
+      <h1 className="dashboardList" style={{ paddingTop: "20px" }}>
+        Adminitistrador
+      </h1>
+      <button className="botonDashboard" onClick={() => setOpenCreate(true)}>
+        Agregar
+      </button>
 
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <TableContainer
+        component={Paper}
+        sx={{ backgroundColor: "rgb(25, 25, 25)" }}
+      >
+        <Table
+          className="dashboardList"
+          sx={{ minWidth: 650 }}
+          aria-label="simple table"
+        >
           <TableHead>
             <TableRow>
-              <TableCell>id</TableCell>
-              <TableCell align="right">name</TableCell>
-              <TableCell align="right">price</TableCell>
-              <TableCell align="right">stock</TableCell>
-              <TableCell align="right">Actions</TableCell>
+              <TableCell className="dashboardList">id</TableCell>
+              <TableCell align="right" className="dashboardList">
+                name
+              </TableCell>
+              <TableCell align="right" className="dashboardList">
+                price
+              </TableCell>
+              <TableCell align="right" className="dashboardList">
+                stock
+              </TableCell>
+              <TableCell align="right" className="dashboardList">
+                Actions
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -49,20 +70,35 @@ const Dashboard = ({
                 key={product.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row" className="dashboardList">
                   {product.id}
                 </TableCell>
-                <TableCell align="right">{product.name}</TableCell>
-                <TableCell align="right">{product.price}</TableCell>
-                <TableCell align="right">{product.stock}</TableCell>
+                <TableCell align="right" className="dashboardList">
+                  {product.name}
+                </TableCell>
+                <TableCell align="right" className="dashboardList">
+                  {product.price}
+                </TableCell>
+                <TableCell align="right" className="dashboardList">
+                  {product.stock}
+                </TableCell>
                 <TableCell align="right">
-                  <IconButton onClick={() => viewById(product)}>
+                  <IconButton
+                    onClick={() => viewById(product)}
+                    className="dashboardList"
+                  >
                     <VisibilityIcon />
                   </IconButton>
-                  <IconButton onClick={() => editById(product)}>
+                  <IconButton
+                    onClick={() => editById(product)}
+                    className="dashboardList"
+                  >
                     <EditIcon />
                   </IconButton>
-                  <IconButton onClick={() => deleteById(product)}>
+                  <IconButton
+                    onClick={() => deleteById(product)}
+                    className="dashboardList"
+                  >
                     <DeleteForeverIcon />
                   </IconButton>
                 </TableCell>
@@ -83,7 +119,7 @@ const Dashboard = ({
       {openCreate && (
         <CreateProductModal open={openCreate} handleClose={handleCloseCreate} />
       )}
-    </div>
+    </Box>
   );
 };
 

@@ -1,0 +1,11 @@
+.dashboardList {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+.botonDashboard {
+  margin-left: 25px;
+  border-radius: 15px;
+  color: white;
+  background-color: rgba(25, 25, 25);
+}
